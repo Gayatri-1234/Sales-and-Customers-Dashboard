@@ -134,7 +134,7 @@ Orders.csv
 
 ## 📬 Contact
 
-**Prathamesh / [Your Name]**
+**Gayatri**
 - 📧 [Gmail](mailto:gayatrijangam6@gmail.com)
 - 💼 [LinkedIn](www.linkedin.com/in/gayatri-mallaya-jangam-offcial)
 - 🐙 [GitHub](https://github.com/Gayatri-1234)
