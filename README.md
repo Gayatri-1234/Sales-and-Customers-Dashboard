@@ -1,123 +1,145 @@
-📊 Sales Performance Dashboard –
-🔗## Live Dashboard
+# 📊 Sales & Customer Analytics Dashboard
 
-👉 https://public.tableau.com/app/profile/gayatri.jangam/viz/SalesDashboard_17756524567870/SalesDashboard?publish=yes
+> An end-to-end Tableau business intelligence project delivering executive-level insights on sales performance, profitability, and customer behavior — powered by a relational multi-table dataset.
 
-📌 Problem Statement
+---
 
-This user story outlines the specifications for building two dashboards using tableau to help stakeholders, including sales managers and executives to analyze sales performance and customers.
+## 🖼️ Dashboard Previews
 
-This project analyzes sales data to identify:
+### Sales Dashboard
+![Sales Dashboard](./sales.JPG)
 
-Revenue growth trends
-Profitability across product categories
-High-performing vs underperforming segments
+### Customer Dashboard
+![Customer Dashboard](./cus.JPG)
 
-🛠️ Tools Used
+---
 
-Tableau – Dashboard creation
-Excel / CSV – Data source
-Data Cleaning – Handling missing values and inconsistencies
+## 🎯 Project Overview
 
-📊 Key Metrics (2023)
+This project presents two interactive Tableau dashboards built on the classic **Sales and Customers** dataset — a multi-table relational model spanning customers, orders, products, and locations across the United States.
 
-💰 Total Sales: $733K (+10.8% YoY growth)
-📈 Total Profit: $93K (+14.2% YoY growth)
-📦 Total Quantity Sold: 12K (+26.8% YoY growth)
+The dashboards are designed to answer real business questions that matter to executives, sales managers, and analysts:
 
-👉 Insight: Quantity is growing faster than revenue → possible discounting or lower pricing strategy
+- Which product subcategories drive the most profit — and which are bleeding losses?
+- How is the business trending month over month vs. the prior year?
+- Who are the highest-value customers, and how frequently do they order?
+- Where are sales and profit above or below average over time?
 
-📈 Key Insights
-Sales Dashboard | Requirements
+---
 
-Dashboard Purpose
-The purpose of sales dashboard is to present an overview of the sales metrics and trends in order to analyze year-over-year sales performance and understand sales trends.
+## 📈 Dashboard 1 — Sales Performance
 
-Key Requirements
-KPI Overview
-Display a summary of total sales, profits and quantity for the current year and the previous year.
+| KPI | 2023 Value | YoY Change |
+|---|---|---|
+| 💰 Total Sales | $733K | ▲ 10.8% vs. PY |
+| 📦 Total Quantity | 12K units | ▲ 26.8% vs. PY |
+| 💵 Total Profit | $93K | ▲ 14.2% vs. PY |
 
-Sales Trends
-– Present the data for each KPI on a monthly basis for both the current year and the previous year.
+**Key Visuals:**
 
-– Identify months with highest and lowest sales and make them easy to recognize.
+- **Monthly Sparklines** — Current year vs. prior year with highest/lowest month callouts
+- **Sales & Profit by Subcategory** — Horizontal bar chart comparing 2023 vs. 2022 sales, paired with profit/loss indicators per subcategory (e.g., Tables & Machines are loss-makers; Phones & Chairs lead in sales)
+- **Sales & Profit Trends Over Time** — Dual time-series chart with above/below average shading, benchmarked at Avg. $14K (Sales) and Avg. $2K (Profit)
 
-Product Subcategory Comparison
-– Compare sales performance by different product subcategories for the current year and the previous year.
+---
 
-– Include a comparison of sales with profit.
+## 👥 Dashboard 2 — Customer Intelligence
 
-Weekly Trends for Sales & Profit
-– Present weekly sales and profit data for the current year.
+| KPI | 2023 Value | YoY Change |
+|---|---|---|
+| 🧑‍🤝‍🧑 Total Customers | 693 | ▲ 8.6% vs. PY |
+| 🛒 Sales Per Customer | $1,058 | ▲ 10.8% vs. PY |
+| 📋 Total Orders | 1,687 | ▲ 28.3% vs. PY |
 
-– Display the average weekly values.
+**Key Visuals:**
 
-– Highlight weeks that are above and below the average to draw attention to sales & profit performance.
-👉 Insight: Some categories are high-value (profit-heavy) vs others are volume-driven
+- **Customer Distribution by Order Count** — Bar chart revealing that 400 customers placed only 1–2 orders, highlighting upsell opportunity
+- **Top 10 Customers by Profit** — Ranked table with last order date, 2023 profit, 2023 sales, and order count (e.g., Raymond Buch: $6,781 profit on $14,203 sales)
 
-3. Loss-Making Segments 🚨
-Categories like Tables and Machines show negative profit (loss)
+---
 
-👉 This is critical:
+## 🗃️ Data Model
 
-Either pricing is wrong
-Or costs/discounts are too high
-4. Sales vs Profit Mismatch
-Some categories show good sales but low/negative profit
+The project uses a star-schema-style relational model with four tables joined on shared keys:
 
-👉 Insight:
-High revenue ≠ good business
-→ Focus should shift to profit optimization, not just sales growth
+```
+Orders.csv
+├── Customer ID  ──→  Customers.csv  (Customer ID, Customer Name)
+├── Postal Code  ──→  Location.csv   (Postal Code, City, State, Region, Country)
+└── Product ID   ──→  Products.csv   (Product ID, Category, Sub-Category, Product Name)
+```
 
-5. Time-Based Trends
-Sales fluctuate throughout the year with clear spikes in certain periods
-Profit trend shows volatility, including negative periods
+| File | Description | Key Fields |
+|---|---|---|
+| `Orders.csv` | Fact table — one row per line item | Order ID, Order Date, Sales, Quantity, Discount, Profit |
+| `Customers.csv` | Customer dimension | Customer ID, Customer Name |
+| `Location.csv` | Geography dimension | Postal Code, City, State, Region |
+| `Products.csv` | Product dimension | Product ID, Category, Sub-Category, Product Name |
 
-👉 Insight:
+---
 
-Business likely has seasonality
-Profit instability suggests cost or discount control issues
+## 🛠️ Tools & Skills Demonstrated
 
-📊 Dashboard Features
+| Area | Details |
+|---|---|
+| **BI Tool** | Tableau Desktop |
+| **Data Modeling** | Multi-table joins (star schema), calculated fields |
+| **Visualization Types** | Sparklines, bar charts, time-series area charts, ranked tables, KPI cards |
+| **Analysis Techniques** | Year-over-year comparison, above/below average benchmarking, profit/loss segmentation |
+| **Design Principles** | Consistent color language (blue = positive, orange = negative/loss), clean layout, executive summary format |
 
-KPI cards for quick performance tracking
-Year-over-year comparison (2023 vs 2022)
-Subcategory-level breakdown (Sales vs Profit)
-Time-series trend analysis for sales and profit
-Visual indicators for above/below average performance
+---
 
-🧠 My Approach
+## 🚀 How to Explore the Dashboard
 
-1. Data Preparation
-Cleaned missing/null values
-Standardized category and subcategory names
-Validated key metrics (sales, profit, quantity)
+1. **Clone this repository**
+   ```bash
+   git clone https://github.com/your-username/superstore-tableau-dashboard.git
+   cd Sales and Customer-tableau-dashboard
+   ```
 
-2. Analysis
-Compared year-over-year performance
-Identified profit vs sales gaps
-Evaluated subcategory-level performance
+2. **Open in Tableau Desktop**
+   - Open `Superstore_Dashboard.twbx` in Tableau Desktop (v2022.1+)
+   - All data is embedded — no additional setup required
 
-3. Dashboard Design
-Focused on business decision-making
-Used color coding for profit vs loss
-Kept layout simple and insight-driven
+3. **Or explore via Tableau Public**
+   - 🔗 [View Live Dashboard on Tableau Public](#) *(https://public.tableau.com/app/profile/gayatri.jangam/viz/SalesDashboard_17756524567870/SalesDashboard?publish=yes)*
 
-🚀 Business Recommendations
+---
 
-📉 Reduce or fix loss-making categories (Tables, Machines)
-💡 Focus on high-margin products (Copiers)
-📊 Investigate discount strategies (due to high quantity growth)
-📅 Leverage seasonal peaks for marketing campaigns
+## 📁 Repository Structure
 
-🔮 Future Improvements
+```
+📦 Sales and Customer-tableau-dashboard
+├── 📊 Sales and Customer_Dashboard.twbx    # Packaged Tableau workbook
+├── 📄 Orders.csv                   # Fact table
+├── 📄 Customers.csv                # Customer dimension
+├── 📄 Location.csv                 # Geography dimension
+├── 📄 Products.csv                 # Product dimension
+├── 🖼️ sales.JPG                    # Sales dashboard preview
+├── 🖼️ cus.JPG                      # Customer dashboard preview
+└── 📝 README.md
+```
 
-Add profit margin (%) analysis
-Include region-wise performance
-Implement forecasting (sales prediction)
-Connect to live database for real-time insights
+---
 
+## 💡 Key Business Insights
 
+- **Tables are loss-making** despite significant sales volume — a clear signal for pricing or discount strategy review
+- **400 of 693 customers** ordered only 1–2 times in 2023 — a major retention and repeat-purchase opportunity
+- **Phones & Chairs** are the dual revenue engines by subcategory
+- **Q4 (Nov–Dec)** consistently peaks across Sales, Profit, and Quantity — useful for inventory and campaign planning
+- **Top 10 customers** contribute disproportionate profit — CRM prioritization is warranted
 
+---
 
+## 📬 Contact
 
+**Prathamesh / [Your Name]**
+- 📧 [Gmail](mailto:gayatrijangam6@gmail.com)
+- 💼 [LinkedIn](www.linkedin.com/in/gayatri-mallaya-jangam-offcial)
+- 🐙 [GitHub](https://github.com/Gayatri-1234)
+
+---
+
+> ⭐ If you found this project helpful or insightful, consider giving it a star — it helps others discover it!
