@@ -98,7 +98,7 @@ Orders.csv
    ```
 
 2. **Open in Tableau Desktop**
-   - Open `Superstore_Dashboard.twbx` in Tableau Desktop (v2022.1+)
+   - Open `Sales and Customer_Dashboard` in Tableau Desktop (v2022.1+)
    - All data is embedded — no additional setup required
 
 3. **Or explore via Tableau Public**
