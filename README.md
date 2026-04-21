@@ -10,7 +10,7 @@
 ![Sales Dashboard](./sales.JPG)
 
 ### Customer Dashboard
-![Customer Dashboard](./cus.JPG)
+![Customer Dashboard](./customer.JPG)
 
 ---
 
