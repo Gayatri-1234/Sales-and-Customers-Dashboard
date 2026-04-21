@@ -94,8 +94,7 @@ Orders.csv
 
 1. **Clone this repository**
    ```bash
-   git clone https://github.com/your-username/superstore-tableau-dashboard.git
-   cd Sales and Customer-tableau-dashboard
+   git clone https:https://github.com/Gayatri-1234/Sales-and-Customers-Dashboard
    ```
 
 2. **Open in Tableau Desktop**
